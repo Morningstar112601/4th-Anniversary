@@ -1,0 +1,17 @@
+{
+  "name": "Jericho & Janna — 4th Anniversary",
+  "short_name": "J & J ♡ IV",
+  "description": "Our 4th Anniversary interactive universe — November 26, 2026",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080915",
+  "theme_color": "#080915",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

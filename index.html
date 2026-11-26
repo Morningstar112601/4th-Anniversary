@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Jericho &amp; Janna — 4th Anniversary</title>
+
+  <!-- iPhone / PWA Home Screen Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="J & J ♡ IV" />
+  <meta name="theme-color" content="#080915" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./assets/icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+
+  <!-- Editorial & Handwritten Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Interactive Starfield & Firefly Canvas -->
+  <canvas id="sky-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Nebula Glows -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Floating Vinyl Music Player -->
+  <button id="music-toggle" class="music-pill" type="button" aria-label="Toggle ambient music">
+    <span class="vinyl-disc" id="vinyl-disc" aria-hidden="true">
+      <span class="vinyl-center"></span>
+    </span>
+    <span class="music-meta">
+      <span class="music-title" id="music-label">Play Our Song</span>
+      <span class="music-sub">Tap for ambient melody</span>
+    </span>
+  </button>
+
+  <!-- Subtle Top Progress Nav -->
+  <nav class="top-nav" aria-label="Sections">
+    <a href="#hero" class="nav-brand">J &amp; J</a>
+    <div class="nav-links">
+      <a href="#chapters">Chapters</a>
+      <a href="#polaroids">Memories</a>
+      <a href="#open-when">Vault</a>
+      <a href="#quiz">Surprise</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero section">
+      <div class="hero-content reveal">
+        <p class="eyebrow">November 26, 2026 &bull; Four Years Together</p>
+        <h1 class="hero-title">
+          Jericho <span class="amp">&amp;</span> Janna
+        </h1>
+        <p class="hero-subtitle">
+          A little universe made just for you—tap the stars, flip our memories, and unlock your 4th anniversary surprise.
+        </p>
+
+        <!-- Live Time Together Counter -->
+        <div class="counter-card glass-card" aria-label="Time spent together">
+          <p class="counter-label">Every second with you since Nov 26, 2022</p>
+          <div class="counter-grid" id="live-counter">
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-years">4</span>
+              <span class="counter-txt">Years</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-days">00</span>
+              <span class="counter-txt">Days</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-hours">00</span>
+              <span class="counter-txt">Hours</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-mins">00</span>
+              <span class="counter-txt">Mins</span>
+            </div>
+            <div class="counter-unit">
+              <span class="counter-num" id="cnt-secs">00</span>
+              <span class="counter-txt">Secs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#chapters" class="btn-primary">Begin Our Journey</a>
+          <span class="touch-hint">✨ Tip: Drag your finger across the sky</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: OUR 4 CHAPTERS CONSTELLATION -->
+    <section id="chapters" class="section">
+      <div class="section-header reveal">
+        <p class="eyebrow">Chapter I &ndash; IV</p>
+        <h2>Our 4-Year Constellation</h2>
+        <p class="section-desc">Tap each glowing star to revisit a chapter of our story.</p>
+      </div>
+
+      <div class="constellation-wrap glass-card reveal">
+        <div class="constellation-sky" role="tablist" aria-label="Anniversary chapters">
+          <svg class="constellation-lines" viewBox="0 0 800 220" preserveAspectRatio="none" aria-hidden="true">
+            <path
+              d="M 100 150 Q 220 40 310 95 T 510 70 T 700 130"
+              fill="none"
+              stroke="rgba(247, 217, 180, 0.25)"
+              stroke-width="2"
+              stroke-dasharray="6 6"
+            />
+            <path
+              id="constellation-active-line"
+              d="M 100 150 Q 220 40 310 95 T 510 70 T 700 130"
+              fill="none"
+              stroke="url(#starGrad)"
+              stroke-width="2.5"
+            />
+            <defs>
+              <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f7d9b4" />
+                <stop offset="100%" stop-color="#e29578" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <button class="star-node active" data-chapter="0" style="left: 12.5%; top: 68%;" role="tab" aria-selected="true">
+            <span class="star-pulse"></span>
+            <span class="star-core">✦</span>
+            <span class="star-label">Year 1</span>
+          </button>
+          <button class="star-node" data-chapter="1" style="left: 38.7%; top: 43%;" role="tab" aria-selected="false">
+            <span class="star-pulse"></span>
+            <span class="star-core">✦</span>
+            <span class="star-label">Year 2</span>
+          </button>
+          <button class="star-node" data-chapter="2" style="left: 63.7%; top: 32%;" role="tab" aria-selected="false">
+            <span class="star-pulse"></span>
+            <span class="star-core">✦</span>
+            <span class="star-label">Year 3</span>
+          </button>
+          <button class="star-node" data-chapter="3" style="left: 87.5%; top: 59%;" role="tab" aria-selected="false">
+            <span class="star-pulse"></span>
+            <span class="star-core">✦</span>
+            <span class="star-label">Year 4</span>
+          </button>
+        </div>
+
+        <article class="chapter-detail" id="chapter-detail" aria-live="polite">
+          <!-- Populated by app.js -->
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MEMORY TABLE / FLIPPABLE POLAROIDS -->
+    <section id="polaroids" class="section">
+      <div class="section-header reveal">
+        <p class="eyebrow">Tactile Memories</p>
+        <h2>The Polaroid Table</h2>
+        <p class="section-desc">Tap any Polaroid to flip it over and read the note on the back.</p>
+      </div>
+
+      <div class="polaroid-controls reveal">
+        <button id="shuffle-polaroids" class="btn-ghost" type="button">↻ Gently Scatter Photos</button>
+      </div>
+
+      <div class="polaroid-grid reveal" id="polaroid-grid">
+        <!-- Populated by app.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: OPEN WHEN... DIGITAL VAULT -->
+    <section id="open-when" class="section">
+      <div class="section-header reveal">
+        <p class="eyebrow">Keep These Close</p>
+        <h2>Open When&hellip;</h2>
+        <p class="section-desc">Four little capsules written for whenever you need me.</p>
+      </div>
+
+      <div class="vault-grid reveal" id="vault-grid">
+        <!-- Populated by app.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 4: MINI QUIZ TO UNLOCK THE SURPRISE -->
+    <section id="quiz" class="section">
+      <div class="section-header reveal">
+        <p class="eyebrow">One Little Game</p>
+        <h2>Unlock Your 4th Anniversary Gift</h2>
+        <p class="section-desc">Answer 4 quick questions about us to unseal your final letter &amp; surprise.</p>
+      </div>
+
+      <div class="quiz-card glass-card reveal" id="quiz-card">
+        <!-- Populated by app.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 5: GRAND FINALE — WAX SEAL LETTER + SCRATCH-OFF GIFT CHECK -->
+    <section id="finale" class="section finale-section locked">
+      <div class="section-header reveal">
+        <p class="eyebrow">For Janna</p>
+        <h2>Your 4th Anniversary Surprise</h2>
+        <p class="section-desc" id="finale-subtitle">Complete the quick quiz above—or tap below—to unseal your gift.</p>
+      </div>
+
+      <!-- Sealed Envelope -->
+      <div class="wax-envelope-wrap reveal" id="wax-envelope-wrap">
+        <div class="wax-envelope" id="wax-envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <p class="envelope-to">To My Dearest Janna,</p>
+            <p class="envelope-hint">Tap the wax seal to open</p>
+          </div>
+          <button class="wax-seal-btn" id="wax-seal-btn" type="button" aria-label="Break wax seal and open letter">
+            <span>J&amp;J</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Opened Letter + Scratch-off Gift Check -->
+      <div class="finale-revealed hidden" id="finale-revealed">
+        <article class="love-letter glass-card">
+          <p class="letter-date">November 26, 2026</p>
+          <h3>Happy 4th Anniversary, Janna ♡</h3>
+          <p>
+            Four years with you has been my favorite chapter of life. Thank you for every laugh, every late-night talk,
+            every quiet moment, and every time you believed in me and in us.
+          </p>
+          <p>
+            No matter how busy things get, you will always be my favorite place to come home to. Here is to year four—and
+            every adventure still waiting for us.
+          </p>
+          <p class="letter-sign">Forever yours,<br /><span>Jericho</span></p>
+        </article>
+
+        <!-- Scratch-Off Surprise Card -->
+        <div class="scratch-section">
+          <p class="eyebrow">Scratch with your finger below</p>
+          <h3 class="scratch-heading">Your Special Anniversary Treat</h3>
+
+          <div class="gift-check-container" id="gift-check-container">
+            <!-- Underlying Mornvyr Development Shopping Gift Check -->
+            <div class="gift-check" id="gift-check">
+              <div class="check-border">
+                <div class="check-top">
+                  <div class="check-issuer">
+                    <div class="mornvyr-badge">MD</div>
+                    <div>
+                      <span class="issuer-name">MORNVYR DEVELOPMENT</span>
+                      <span class="issuer-sub">Anniversary Shopping Gift Check</span>
+                    </div>
+                  </div>
+                  <div class="check-meta">
+                    <span>NO. <strong>0004-1126</strong></span>
+                    <span>DATE: <strong>11 / 26 / 2026</strong></span>
+                  </div>
+                </div>
+
+                <div class="check-row">
+                  <span class="check-label">PAY TO THE ORDER OF</span>
+                  <span class="check-value handwritten">Janna</span>
+                  <div class="check-amount-box">
+                    <span class="amount-num" style="font-size: 1rem; letter-spacing: 0.06em;">SHOPPING TREAT</span>
+                  </div>
+                </div>
+
+                <div class="check-row words-row">
+                  <span class="check-words handwritten">One Shopping Gift Check — Pick Anything You Want! ♡</span>
+                  <span class="check-label-sm">VIP PASS</span>
+                </div>
+
+                <div class="check-bottom">
+                  <div class="check-memo">
+                    <span class="check-label">MEMO</span>
+                    <span class="handwritten">4th Anniversary — Shopping date on me! ♡</span>
+                  </div>
+                  <div class="check-sig">
+                    <span class="sig-script handwritten">Jericho</span>
+                    <span class="check-label">AUTHORIZED SIGNATURE &bull; MORNVYR DEV</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Scratch-Off Foil Canvas -->
+            <canvas id="scratch-canvas" aria-label="Scratch off card to reveal your gift check"></canvas>
+          </div>
+
+          <div class="scratch-actions">
+            <span class="scratch-status" id="scratch-status">✨ Swipe across the gold foil to reveal</span>
+            <button id="reveal-all-btn" class="btn-ghost" type="button">Reveal Instantly</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Crafted with love by <strong>Jericho</strong> (Mornvyr Development) for <strong>Janna</strong> &bull; 11/26/2026</p>
+  </footer>
+
+  <!-- Modal for "Open When..." Letters -->
+  <div class="modal-backdrop hidden" id="letter-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card glass-card">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close letter">&times;</button>
+      <p class="eyebrow" id="modal-tag">Open When</p>
+      <h3 id="modal-title"></h3>
+      <p class="modal-body" id="modal-body"></p>
+      <p class="modal-sign">— Jericho ♡</p>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

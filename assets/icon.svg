@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#22193b"/>
+      <stop offset="60%" stop-color="#111026"/>
+      <stop offset="100%" stop-color="#080915"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d9b4"/>
+      <stop offset="50%" stop-color="#e29578"/>
+      <stop offset="100%" stop-color="#d4a373"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="120" cy="110" r="3" fill="#fff" opacity="0.7"/>
+  <circle cx="390" cy="95" r="2.5" fill="#f7d9b4" opacity="0.8"/>
+  <circle cx="420" cy="360" r="3" fill="#fff" opacity="0.5"/>
+  <circle cx="95" cy="380" r="2" fill="#e29578" opacity="0.7"/>
+  <path d="M256 382s-116-74-116-160c0-44 34-78 76-78 24 0 40 14 40 14s16-14 40-14c42 0 76 34 76 78 0 86-116 160-116 160z" fill="none" stroke="url(#gold)" stroke-width="14" stroke-linejoin="round"/>
+  <text x="256" y="256" text-anchor="middle" dominant-baseline="central" font-family="Georgia, serif" font-size="68" font-style="italic" fill="#f7d9b4">J &amp; J</text>
+  <text x="256" y="438" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="8" fill="#d4a373">IV YEARS</text>
+</svg>
